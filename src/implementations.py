@@ -1,5 +1,4 @@
-'''File which contains all function implementations from table 1
-of step 2 as well as auxiliar functions used in the project'''
+'''File contains all function implementations from table 1 of step 2 '''
 
 # Useful starting lines
 import numpy as np
@@ -36,7 +35,7 @@ def least_squares_GD(y, tx, initial_w, max_iters, gamma):
 
     return  w, compute_loss_mse(y, tx, w)
 
-
+# shuffle data in random
 def shuffle_dataset(y, tx):
     """shuffling dataset"""
 
@@ -47,6 +46,7 @@ def shuffle_dataset(y, tx):
 
     return shuffled_y, shuffled_tx
 
+# least square with SGD
 def least_squares_SGD(y, tx, initial_w, max_iters, gamma):
     """Computes least squares using Stochastic Gradient Descent"""
     w = initial_w
@@ -86,17 +86,19 @@ def ridge_regression(y, tx, lambda_):
    
     return w, compute_loss_mse(y, tx, w)
 
+# loss function for logistic_regression
 def compute_loss_logistic_regression(y, tx, w):
     """calculate loss for logistic regression"""
     sigmoid = 1 / (1 + np.exp(-(tx.dot(w))))
     loss = -1 / len(y) * np.sum((1 - y) * np.log(1 - sigmoid) + y * np.log(sigmoid))
     return loss
 
+# logistic_regression
 def logistic_regression(y, tx, initial_w, max_iters, gamma):
     """Computes logistic regression using gradient descent"""
     w = initial_w
-    for n_iter in range(max_iters):
 
+    for n_iter in range(max_iters):
         # apply sigmoid function on tx @ w
         sigmoid = 1/ (1 + np.exp(-(tx.dot(w))))
         gradient = -1/len(y) * tx.T.dot(y-sigmoid)
@@ -105,9 +107,11 @@ def logistic_regression(y, tx, initial_w, max_iters, gamma):
     loss = compute_loss_logistic_regression(y, tx, w)
     return w, loss
 
+# regularized logistic regression
 def reg_logistic_regression(y, tx, lambda_ , initial_w, max_iters, gamma):
     """Computes regularized logistic regression using gradient descent"""
     w = initial_w
+
     for n_iter in range(max_iters):
         sigmoid = 1 / (1 + np.exp(-(tx.dot(w))))
         gradient = -1 / len(y) * tx.T.dot(y - sigmoid) + 2 * lambda_ * w

@@ -8,18 +8,18 @@ Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu
 
 ### **In this repository we submit:** 
 
-**implementations.py**
+**implementations.py:**
 	where we have the basic functions as well as other functions necessary for the project
 
-**helpers and proj1 helpers**
+**helpers and proj1 helpers:**
 	which contain auxiliar functions used in the project
 
-**run.py**
+**run.py:**
 	File to run for the test (prediction)
 
-**Report** 
+**Report:** 
 
-**Code notebook**
+**Code notebook:**
 	Contains all the code including: data analysis and preprocessing/cleaning, the training with the chosen method (ridge regression) and the code that is common to run.py for the predictions
 
 
@@ -31,14 +31,17 @@ Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu
 - train.csv.zip
 - test.csv.zip
 
-2. Open run.py and change the data path in "load_data", 
+```bash
+unzip train.csv.zip
+unzip test.csv.zip
+```
+
+2. Open run.py and change the data path in "load_data" so that it loads the desired file. 
 
 ```python
 DATA_TRAIN_PATH = '../data/train.csv'
 DATA_TEST_PATH = '../data/test.csv'
 ```
-
-so that it loads the desired file. 
 
 3. Open the terminal, run run.py
 
