@@ -8,7 +8,7 @@ Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu
 
 ### **In this repository we submit:** 
 
-- **ML_project1.pdf:** 
+- **ML_Project1.pdf:** 
 
 Report of the project. 
 
