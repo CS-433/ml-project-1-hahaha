@@ -7,6 +7,8 @@ Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu
 
 
 ### **In this repository we submit:** 
+**Document_code_for_pdf.ipynb**
+        where all of the codes for the report's results and figures are presented. The flow is the same as the paper report.
 
 **implementations.py**
 	where we have the basic functions as well as other functions necessary for the project
