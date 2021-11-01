@@ -10,15 +10,15 @@ from proj1_helpers import *
 # Cost functions mse
 def compute_loss_mse(y, tx, w):
     """calculate loss using mean squared error"""
-    e = y - tx @ w
-    return 1/2 * np.mean(e**2)
+    err = y - tx.dot(w)
+    return 1/2 * np.mean(err**2)
 
 
 # Gradient descent
 def compute_gradient(y, tx, w):
     """Compute the gradient."""
-    err = y - tx @ w
-    grad = -1 / len(err) * tx.T @ err
+    err = y - tx.dot(w)
+    grad = -1 / len(err) * tx.T.dot(err)
     return grad, err
 
 
@@ -56,7 +56,7 @@ def least_squares_SGD(y, tx, initial_w, max_iters, gamma):
         
         # each step contains 1 datapoint
         for training_example in range(len(y)):
-            e = shuffled_y[training_example] -shuffled_tx[training_example] @ w
+            e = shuffled_y[training_example] -shuffled_tx[training_example].dot(w)
             grad = -e * shuffled_tx[training_example]
             w = w - gamma * grad
 
@@ -68,8 +68,8 @@ def least_squares(y, tx):
     """calculate the least squares."""
 
     # calculate w
-    A = tx.T @ tx
-    b = tx.T @ y 
+    A = np.dot(tx.T, tx)
+    b = np.dot(tx.T, y) 
     w = np.linalg.solve(A, b)
 
     return w, compute_loss_mse(y, tx, w)
@@ -80,15 +80,15 @@ def ridge_regression(y, tx, lambda_):
 
     # large model w wi will be penalized
     lambda_aux = lambda_ * (2*len(y)) 
-    A = tx.T @ tx + lambda_aux * np.eye(tx.shape[1])    
-    b = tx.T @ y 
+    A = np.dot(tx.T, tx) + lambda_aux * np.eye(tx.shape[1])    
+    b = np.dot(tx.T, y) 
     w = np.linalg.solve(A, b)
    
     return w, compute_loss_mse(y, tx, w)
 
 def compute_loss_logistic_regression(y, tx, w):
     """calculate loss for logistic regression"""
-    sigmoid = 1 / (1 + np.exp(-(tx @ w)))
+    sigmoid = 1 / (1 + np.exp(-(tx.dot(w))))
     loss = -1 / len(y) * np.sum((1 - y) * np.log(1 - sigmoid) + y * np.log(sigmoid))
     return loss
 
@@ -98,8 +98,8 @@ def logistic_regression(y, tx, initial_w, max_iters, gamma):
     for n_iter in range(max_iters):
 
         # apply sigmoid function on tx @ w
-        sigmoid = 1/ (1 + np.exp(-(tx @ w)))
-        gradient = -1/len(y) * tx.T @ (y-sigmoid)
+        sigmoid = 1/ (1 + np.exp(-(tx.dot(w))))
+        gradient = -1/len(y) * tx.T.dot(y-sigmoid)
         w = w-gamma * gradient
 
     loss = compute_loss_logistic_regression(y, tx, w)
@@ -109,9 +109,9 @@ def reg_logistic_regression(y, tx, lambda_ , initial_w, max_iters, gamma):
     """Computes regularized logistic regression using gradient descent"""
     w = initial_w
     for n_iter in range(max_iters):
-        sigmoid = 1 / (1 + np.exp(-(tx @ w)))
-        gradient = -1 / len(y) * tx.T @ (y - sigmoid) + 2 * lambda_ * w
+        sigmoid = 1 / (1 + np.exp(-(tx.dot(w))))
+        gradient = -1 / len(y) * tx.T.dot(y - sigmoid) + 2 * lambda_ * w
         w = w - gamma * gradient
 
-    loss = compute_loss_logistic_regression(y, tx, w) + lambda_ * w.T @ w
+    loss = compute_loss_logistic_regression(y, tx, w) + lambda_ * w.T.dot(w)
     return w, loss
