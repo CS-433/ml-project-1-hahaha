@@ -21,10 +21,10 @@ Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu
 
 **Report:** 
 
-**Code notebook:**
-	Contains all the code including: data analysis and preprocessing/cleaning, the training with the chosen method (ridge regression) and the code that is common to run.py for the predictions
+**code_report.ipynb:**
+	Contains all the code including: data analysis and preprocessing/cleaning, comparison between six basic machine learning algorithms, cross validation, the training with the chosen method (ridge regression) 
 
-
+⚠️ If you want to implement this notebook , don't forget to change the **loading data path**!
 
 ### **How to run the test:**
 
