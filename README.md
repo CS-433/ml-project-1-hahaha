@@ -7,24 +7,27 @@ Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu
 
 
 ### **In this repository we submit:** 
-**Document_code_for_pdf.ipynb**
-        where all of the codes for the report's results and figures are presented. The flow is the same as the paper report.
+**code_report.ipynb:**
+
+where all of the codes for the report's results and figures are presented. The flow is the same as the paper report.
+
+⚠️ If you want to implement this notebook , don't forget to change the **loading data path**!
 
 **implementations.py:**
-	where we have the basic functions as well as other functions necessary for the project
+
+where we have the basic functions as well as other functions necessary for the project
 
 **helpers and proj1 helpers:**
-	which contain auxiliar functions used in the project
+
+which contain auxiliar functions used in the project
 
 **run.py:**
-	File to run for the test (prediction)
+
+File to run for the test (prediction)
 
 **Report:** 
 
-**code_report.ipynb:**
-	Contains all the code including: data analysis and preprocessing/cleaning, comparison between six basic machine learning algorithms, cross validation, the training with the chosen method (ridge regression) 
 
-⚠️ If you want to implement this notebook , don't forget to change the **loading data path**!
 
 ### **How to run the test:**
 
