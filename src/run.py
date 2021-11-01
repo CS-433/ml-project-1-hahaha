@@ -27,7 +27,7 @@ y_train = np.array(y_train)
 # load test data 
 y_test, x_test, ids = load_csv_data(DATA_TEST_PATH)
 
-# get the index for different group
+# get the index for different groups
 m,n,k,l = index_search(x_test) 
 
 # polinomial degree
