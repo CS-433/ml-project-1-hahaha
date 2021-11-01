@@ -1,33 +1,50 @@
 # ML-Proejct1
 
-**Group Member**: 
+### **Group Member**: 
 
 Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu@epfl.ch)
 
-**How to run the test:**
 
-Open run.py and change the data path in "load_data", 
-so that it loads the desired file. Then, run run.py
 
-**In this folder we submit:** 
+### **In this repository we submit:** 
 
-.implementations.py
-	.where we have the basic functions as well as other functions necessary for the project	
+**implementations.py**
+	where we have the basic functions as well as other functions necessary for the project
 
-.run.py
-	.File to run for the test (prediction)
-	loads the variables - degrees, weights, top_features and other features. These are necessary
-	to make the predictions from the test data. Then it makes the predictions for the labels
-	using the test data
+**helpers and proj1 helpers**
+	which contain auxiliar functions used in the project
 
-.Report.
+**run.py**
+	File to run for the test (prediction)
 
-.helpers and proj1 helpers
-	.which contain auxiliar functions used in the project
+**Report** 
 
-.Code notebook
-	.Contains all the code including: data analysis and preprocessing/cleaning, the training
-	 with the chosen method (ridge regression) and the code that is common to run.py for the predictions
+**Code notebook**
+	Contains all the code including: data analysis and preprocessing/cleaning, the training with the chosen method (ridge regression) and the code that is common to run.py for the predictions
+
+
+
+### **How to run the test:**
+
+1. Decompress two datasets in the data folder
+
+- train.csv.zip
+- test.csv.zip
+
+2. Open run.py and change the data path in "load_data", 
+
+```python
+DATA_TRAIN_PATH = '../data/train.csv'
+DATA_TEST_PATH = '../data/test.csv'
+```
+
+so that it loads the desired file. 
+
+3. Open the terminal, run run.py
+
+```bash
+python run.py
+```
 
 
 
