@@ -7,25 +7,28 @@ Jun qing(jun.qing@epfl.ch)  Lingjun Meng(lingjun.meng@epfl.ch) Aibin Yu(aibin.yu
 
 
 ### **In this repository we submit:** 
-**code_report.ipynb:**
 
-where all of the codes for the report's results and figures are presented. The flow is the same as the paper report.
+- **ML_project1.pdf:** 
+
+Report of the project. 
+
+- **code_report.ipynb:**
+
+The codes for the report's results and figures presented. The flow is the same as the paper report.
 
 ⚠️ If you want to implement this notebook , don't forget to change the **loading data path**!
 
-**implementations.py:**
+- **helpers.py & proj1_helpers.py:**
 
-where we have the basic functions as well as other functions necessary for the project
+Auxiliar functions used in the project
 
-**helpers and proj1 helpers:**
+- **implementations.py:**
 
-which contain auxiliar functions used in the project
+The basic functions as well as other functions necessary for the project
 
-**run.py:**
+- **run.py:**
 
 File to run for the test (prediction)
-
-**Report:** 
 
 
 
